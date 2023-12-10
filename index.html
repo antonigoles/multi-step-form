@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="style-main.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="vertical-style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="step-container">
+      <div class="step step-1">
+        <div class="index selected">1</div>
+        <div class="label">
+          <p class="title">Step 1</p>
+          <p class="subtitle">Your info</p>
+        </div>
+      </div>
+      <div class="step step-2">
+        <div class="index">2</div>
+        <div class="label">
+          <p class="title">Step 2</p>
+          <p class="subtitle">Select plan</p>
+        </div>
+      </div>
+      <div class="step step-3">
+        <div class="index">3</div>
+        <div class="label">
+          <p class="title">Step 3</p>
+          <p class="subtitle">Add-ons</p>
+        </div>
+      </div>
+      <div class="step step-4">
+        <div class="index">4</div>
+        <div class="label">
+          <p class="title">Step 4</p>
+          <p class="subtitle">Summary</p>
+        </div>
+      </div>
+    </div> 
+    <div class="card-section-container">
+      <div class="card-section section-1">
+        <div class="header">
+          <p class="title">Personal info</p>
+          <p class="subtitle">Please provide your name, email address, and phone number.</p>
+        </div>
+        <div class="input">
+          <div class="text-input-form">
+            <div class="labels">
+              <p class="label">Name</p>
+              <p class="label-error label-error-name">This field is required</p>
+            </div>
+            <input required class="input-box" type="text" id="name" placeholder="e.g. Stephen King" />
+          </div>
+          <div class="text-input-form">
+            <div class="labels">
+              <p class="label">Email Address</p>
+              <p class="label-error label-error-email">This field is required</p>
+            </div>
+            <input required class="input-box" type="email" id="email" placeholder="e.g. stephenking@lorem.com" />
+          </div>
+          <div class="text-input-form">
+            <div class="labels">
+              <p class="label">Phone Number</p>
+              <p class="label-error label-error-phone_number">This field is required</p>
+            </div>
+            <input required pattern="[0-9]{9,10}" class="input-box" id="phone_number" type="text" placeholder="e.g. +1 234 567 890" />
+          </div>
+        </div>
+        <div class="navigator">
+          <div class="prev-step-btn" style="visibility: hidden;">Go Back</div>
+          <div class="next-step-btn">Next Step</div>
+        </div>
+      </div>
+      <div style="display: none;" class="card-section section-2">
+        <div class="header">
+          <p class="title">Select your plan</p>
+          <p class="subtitle">You have the option of yearly or monthly billing.</p>
+        </div>
+        <div class="input">
+          <div class="plan-cards">
+            <div id="Arcade" class="plan-card selected">
+              <div class="icon-box">
+                <img src="./assets/images/icon-arcade.svg" alt="">
+              </div>
+              <div class="label">
+                <div class="title">Arcade</div>
+                <div class="price">$9/mo</div>
+                <div class="price price-yearly">$90/mo</div>
+                <div class="yearly-deal">2 months free</div>
+              </div>
+            </div>
+            <div id="Advanced" class="plan-card">
+              <div class="icon-box">
+                <img src="./assets/images/icon-advanced.svg" alt="">
+              </div>
+              <div class="label">
+                <div class="title">Advanced</div>
+                <div class="price">$12/mo</div>
+                <div class="price price-yearly">$120/mo</div>
+                <div class="yearly-deal">2 months free</div>
+              </div>
+            </div>
+            <div id="Pro" class="plan-card">
+              <div class="icon-box">
+                <img src="./assets/images/icon-pro.svg" alt="">
+              </div>
+              <div class="label">
+                <div class="title">Pro</div>
+                <div class="price">$15/mo</div>
+                <div class="price price-yearly">$150/mo</div>
+                <div class="yearly-deal">2 months free</div>
+              </div>
+            </div>
+          </div>
+          <div class="billing-switch">
+            <p class="label-monthly selected">Monthly</p>
+            <div class="switch-body">
+              <div class="switch-dot"></div>
+            </div>
+            <p class="label-yearly" >Yearly</p>
+          </div>
+        </div>
+        <div class="navigator">
+          <div class="prev-step-btn">Go Back</div>
+          <div class="next-step-btn">Next Step</div>
+        </div>
+      </div> 
+      <div style="display: none;" class="card-section section-3">
+        <div class="header">
+          <p class="title">Pick add-ons</p>
+          <p class="subtitle">Add-ons help enhance your gaming experience</p>
+        </div>
+        <div class="input">
+          <div id="online_services" class="addon-block">
+            <div class="checkmark"></div>
+            <div class="label">
+              <p class="title">Online service</p>
+              <p class="subtitle">Access to multiplayer games</p>
+            </div>
+            <div class="price">
+              +$1/mo
+            </div>
+            <div style="display: none;" class="price price-yearly">
+              +$10/yr
+            </div>
+          </div>
+          <div id="larger_storage" class="addon-block">
+            <div class="checkmark"></div>
+            <div class="label">
+              <p class="title">Larger storage</p>
+              <p class="subtitle">Extra 1TB of cloud save</p>
+            </div>
+            <div class="price">
+              +$2/mo
+            </div>
+            <div style="display: none;" class="price price-yearly">
+              +$20/yr
+            </div>
+          </div>
+          <div id="custom_profile" class="addon-block">
+            <div class="checkmark"></div>
+            <div class="label">
+              <p class="title">Customizable Profile</p>
+              <p class="subtitle">Custom theme on your profile</p>
+            </div>
+            <div class="price">
+              +$2/mo
+            </div>
+            <div style="display: none;" class="price price-yearly">
+              +$20/yr
+            </div>
+          </div>
+        </div>
+        <div class="navigator">
+          <div class="prev-step-btn">Go Back</div>
+          <div class="next-step-btn">Next Step</div>
+        </div>
+      </div> 
+      <div style="display: none;" class="card-section section-4">
+        <div class="header">
+          <p class="title">Finishing up</p>
+          <p class="subtitle">Double-check everything looks OK before confirming.</p>
+        </div>
+        <div class="input">
+          <div class="billing-list">
+            <div class="main-service">
+              <div class="type">
+                <div class="label">Arcade (Monthly)</div>
+                <div class="change-btn">Change</div>
+              </div>
+              <div class="price">$9/mo</div>
+            </div>
+            <div class="addons-list">
+              <div class="le">
+                <span class="label">Online service</span>
+                <span class="price">+$1/mo</span>
+              </div>
+              <div class="le">
+                <span class="label">Online service</span>
+                <span class="price">+$1/mo</span>
+              </div>
+            </div>
+          </div>
+          <div class="total">
+            <div class="label">Total (per month)</div>
+            <div class="price">$12/mo</div>
+          </div>
+        </div>
+        <div class="navigator">
+          <div class="prev-step-btn">Go Back</div>
+          <div class="next-step-btn">Confirm</div>
+        </div>
+      </div> 
+      <div style="display: none;" class="card-section section-5">
+          <div class="end-icon"></div>
+          <div class="end-message">
+            <p class="ending-title">Thank you!</p>
+            <p class="ending-subtitle">
+              Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
+            </p>
+        </div>
+      </div> 
+    </div>
+    <div class="mobile-navigator">
+      <div class="prev-step-btn">Go Back</div>
+      <div class="next-step-btn">Next Step</div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
